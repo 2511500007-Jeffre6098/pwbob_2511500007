@@ -1,17 +1,85 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-6">
-            <h3>Daftar Mahasiswa</h3>
-                <ul class="list-group">
-                      <?php foreach ($data['mahasiswa'] as $mhs): ?>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal">Tambah Data Mahasiswa</button>
+            <h3 class="mt-3">Daftar Mahasiswa</h3>
+            <ul class="list-group">
+                <?php foreach ($data['mahasiswa'] as $mhs): ?>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <?php echo $mhs['nama']; ?>
                         <a href="<?php echo BASEURL; ?>/mahasiswa/detail/<?php echo $mhs['id']; ?>" class="badge badge-primary">
                             Detail
                         </a>
                     </li>
-            <?php endforeach; ?>
-             </ul>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="formModal" tabindex="-1" role="dialog"
+    aria-labelledby="judulModal" aria-hidden="true">
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="judulModal">
+                    Tambah Data Mahasiswa
+                </h5>
+                <button type="button" class="close"
+                    data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <form action="<?= BASEURL; ?>/mahasiswa/tambah" method="POST">
+
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="nama">Nama</label>
+                        <input type="text" class="form-control"
+                            id="nama" name="nama"
+                            placeholder="Nama Lengkap" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nim">NIM</label>
+                        <input type="text" class="form-control"
+                            id="nim" name="nim"
+                            placeholder="Nomor Induk Mahasiswa" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control"
+                            id="email" name="email"
+                            placeholder="name@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jurusan">Jurusan</label>
+                        <select class="form-control"
+                            id="jurusan" name="jurusan" required>
+                            <option value="Teknik Informatika">Teknik Informatika</option>
+                            <option value="Sistem Informasi">Sistem Informasi</option>
+                            <option value="Bisnis Digital">Bisnis Digital</option>
+                            <option value="Pendidikan Teknik Informasi">Pendidikan Teknik Informasi</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                        data-dismiss="modal">Keluar</button>
+                    <button type="submit" class="btn btn-primary">
+                        Tambah Data
+                    </button>
+                </div>
+
+            </form>
+
         </div>
     </div>
 </div>
