@@ -15,22 +15,20 @@
                 <?php foreach ($data['mahasiswa'] as $mhs): ?>
                     <li class="list-group-item">
                         <?php echo $mhs['nama']; ?>
-                        <a href="<?php echo BASEURL; ?>/mahasiswa/
-                        hapus/<?php echo $mhs['id']; ?>" class="
-                        badge badge-danger float-right ml-1" onclick=
-                        "return confirm('Yakin?');">
+                        <a href="<?php echo BASEURL; ?>/mahasiswa/hapus/<?php echo $mhs['id']; ?>" 
+                        class="badge badge-danger float-right ml-1" 
+                        onclick="return confirm('Yakin?');">
                             Hapus
                         </a>
-                        <a href="<?php echo BASEURL; ?>/mahasiswa
-                        /ubah/<?php echo $mhs['id']; ?>" class="
-                        badge badge-success float-right ml-1
-                        tampilModalUbah" data-toggle="modal" data-target="#formModal" data-id="<?php echo 
-                        $mhs['id']; ?>">
+                        <a href="<?php echo BASEURL; ?>/mahasiswa/ubah/<?php echo $mhs['id']; ?>" 
+                        class="badge badge-success float-right ml-1 tampilModalUbah" 
+                        data-toggle="modal" 
+                        data-target="#formModal" 
+                        data-id="<?php echo $mhs['id']; ?>">
                             Edit
                         </a>
-                        <a href="<?php echo BASEURL; ?>/mahasiswa
-                        /detail/<?php echo $mhs['id']; ?>" class="
-                        badge badge-primary float-right ml-1">
+                        <a href="<?php echo BASEURL; ?>/mahasiswa/detail/<?php echo $mhs['id']; ?>" 
+                        class="badge badge-primary float-right ml-1">
                             Detail
                         </a>
                     </li>
@@ -62,29 +60,25 @@
                     <input type="hidden" id="id" name="id">
                     <div class="form-group">
                         <label for="nama">Nama</label>
-                        <input type="text" class="form-control"
-                            id="nama" name="nama"
+                        <input type="text" class="form-control" id="nama" name="nama"
                             placeholder="Nama Lengkap" required>
                     </div>
 
                     <div class="form-group">
                         <label for="nim">NIM</label>
-                        <input type="text" class="form-control"
-                            id="nim" name="nim"
+                        <input type="text" class="form-control" id="nim" name="nim"
                             placeholder="Nomor Induk Mahasiswa" required>
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control"
-                            id="email" name="email"
+                        <input type="email" class="form-control" id="email" name="email"
                             placeholder="name@example.com" required>
                     </div>
 
                     <div class="form-group">
                         <label for="jurusan">Jurusan</label>
-                        <select class="form-control"
-                            id="jurusan" name="jurusan" required>
+                        <select class="form-control" id="jurusan" name="jurusan" required>
                             <option value="Teknik Informatika">Teknik Informatika</option>
                             <option value="Sistem Informasi">Sistem Informasi</option>
                             <option value="Bisnis Digital">Bisnis Digital</option>
